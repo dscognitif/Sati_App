@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'placeholder_widget.dart' ;
 
+// initialises the bottom navigation bar widget
+
 class Home extends StatefulWidget {
  @override
  State<StatefulWidget> createState() {
