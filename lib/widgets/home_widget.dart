@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'placeholder_widget.dart' ;
+import 'package:flutter/cupertino.dart';
 
 // initialises the bottom navigation bar widget
 
@@ -10,12 +11,14 @@ class Home extends StatefulWidget {
   }
 }
 
+// state of the tabs -> specifically what is displayed in each of the tabs
+
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
+    PlaceholderWidget(Colors.white), // placeholderwidget is defined in the placeholder_widget.dart file: this sets the colour of the tabs
     PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.blueGrey),
-    PlaceholderWidget(Colors.lightBlue),
+    PlaceholderWidget(Colors.white),
   ];
  @override
   Widget build(BuildContext context) {
