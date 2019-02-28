@@ -5,5 +5,5 @@ This app is still under progress. This is a meditation app primarily for aiding 
 
 ![Image of Buddhism Dharma Wheel](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Dharma_Wheel.svg/120px-Dharma_Wheel.svg.png)
 
-Sati is the seventh element of the the Noble Eighfold Path represented by the Dharma Chakra symbol which is summary of Buddhist practises. Sati translates to the mindfulness in English and the seventh element of the Path is right mindfulness. 
+Sati is the seventh element of the Noble Eighfold Path represented by the Dharma Chakra symbol which is summary of Buddhist practises. Sati translates to the mindfulness in English and the seventh element of the Path is right mindfulness. 
 (https://en.wikipedia.org/wiki/Noble_Eightfold_Path)
