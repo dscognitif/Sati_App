@@ -16,8 +16,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
+    TimerWidget(), //TimerWidget where button widget and timer widget is defined
     PlaceholderWidget(Colors.white), // placeholderwidget is defined in the placeholder_widget.dart file: this sets the colour of the tabs
-    PlaceholderWidget(Colors.white),
     PlaceholderWidget(Colors.white),
   ];
  @override
