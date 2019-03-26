@@ -3,11 +3,17 @@ import 'widgets/FirstPage.dart' as first;
 import 'widgets/SecondPage.dart' as second;
 import 'widgets/ThirdPage.dart' as third;
 
-void main() {
-  runApp(new MaterialApp(
-    home: new MyTabs()
+void main() => runApp(MaterialApp(
+    home: new MyTabs(),
+    theme: ThemeData(
+      canvasColor: Colors.white,
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
+      accentColor: Colors.blueAccent,
+      brightness: Brightness.light,
+    ),
   ));
-}
 
 class MyTabs extends StatefulWidget {
   @override
@@ -15,14 +21,14 @@ class MyTabs extends StatefulWidget {
 }
 
 class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
-
-
   TabController controller;
 
   @override
   void initState() {
     super.initState();
-    controller = new TabController(vsync: this, length: 3);
+    controller = new TabController(
+      vsync: this, 
+      length: 3);
   }
 
   @override
