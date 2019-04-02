@@ -19,7 +19,7 @@ String get timerString {
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(minutes: 2),
+      duration: Duration(seconds: 2),
     );
   }
 
