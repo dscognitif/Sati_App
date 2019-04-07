@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'FirstPage.dart';
 
 class TextFieldInput extends StatefulWidget {
   @override
@@ -13,9 +15,6 @@ class TextFieldInputState extends State<TextFieldInput> {
     timerController.dispose();
     super.dispose();
   }
-
- //  String 
-
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,9 @@ class TextFieldInputState extends State<TextFieldInput> {
             hintText: "Please enter timer value in minutes"
           ),
           controller: timerController,
-          onSubmitted: (v) => timerController.text = v,
+          onSubmitted: (duration) {
+            Navigator.of(context).push(MaterialPageRoute(builder: (_) => FirstPage(duration: int.parse(duration),)));
+          }
         ),
       ),
     );

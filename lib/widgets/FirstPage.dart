@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class FirstPage extends StatefulWidget {
+  final int duration;
+
+  FirstPage({this.duration = 0});
+
   @override
   FirstPageState createState() => FirstPageState(); 
 }
@@ -9,7 +13,7 @@ class FirstPage extends StatefulWidget {
 class FirstPageState extends State<FirstPage> with TickerProviderStateMixin {
   AnimationController controller;
 
-String get timerString {
+  String get timerString {
     Duration duration = controller.duration * controller.value;
     return '${duration.inMinutes}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}';
   }
@@ -19,7 +23,7 @@ String get timerString {
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: Duration(minutes: widget.duration),
     );
   }
 
@@ -59,7 +63,7 @@ String get timerString {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              "Count Down",
+                              "Countdown",
                               style: themeData.textTheme.subhead,
                             ),
                             AnimatedBuilder(
@@ -79,7 +83,7 @@ String get timerString {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(6.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -105,7 +109,7 @@ String get timerString {
                   )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

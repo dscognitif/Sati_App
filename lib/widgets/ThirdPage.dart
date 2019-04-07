@@ -16,7 +16,7 @@ class ThirdPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, TimerPickerPage());
               },
-              child: Text('Timer Picker'),
+              child: Text('TIMER PICKER'),
               color: Colors.white,
               splashColor: Colors.deepPurpleAccent,
             ),
@@ -28,7 +28,7 @@ class ThirdPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, BellSoundsPage());
               },
-              child: Text('Bell Sounds'),
+              child: Text('BELL SOUNDS'),
               color: Colors.white,
               splashColor: Colors.deepPurpleAccent,
             ),
@@ -40,7 +40,7 @@ class ThirdPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, AmbientSoundsPage());
               },
-              child: Text('Ambient Sounds'),
+              child: Text('AMBIENT SOUNDS'),
               color: Colors.white,
               splashColor: Colors.deepPurpleAccent,
             ),
@@ -52,7 +52,7 @@ class ThirdPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, MeditationTechniquesPage());
               },
-              child: const Text('Meditation Techniques'),
+              child: const Text('MEDITATION TECHNIQUES'),
               color: Colors.white,
               splashColor: Colors.deepPurpleAccent,
             ),
@@ -63,29 +63,6 @@ class ThirdPage extends StatelessWidget {
   }
 }
 
-// Implement the CupertinoTimerPicker which sets the duration of the Countdown Timer in main.dart
-
-/* class TimerPickerPage extends MaterialPageRoute<Null> {
-  TimerPickerPage()
-      : super(builder: (BuildContext context) {
-          return Scaffold(
-            appBar: AppBar(
-              title: Text("Timer Picker"),
-              backgroundColor: Colors.deepPurple,
-            ),
-            body: Container(
-              child: Center(
-                heightFactor: 10.0,
-                child: CupertinoTimerPicker(
-                  onTimerDurationChanged: (Duration value) {
-                   // If changed then the duration in the animated timer will change
-                  },
-                ),
-              ),
-            ),
-          );
-        });
-} */
 
 class TimerPickerPage extends MaterialPageRoute<Null> {
   TimerPickerPage()
@@ -101,6 +78,64 @@ class BellSoundsPage extends MaterialPageRoute<Null> {
             appBar: AppBar(
               title: Text("Bell Sounds"),
               backgroundColor: Colors.deepPurple,
+            ),
+            body: ListView(
+              children: <Widget>[
+                Card(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      const ListTile(
+                        title: Text('Tibetan Singing Bowl'),
+                      ),
+                      Image.asset(
+                        'assets/TibetanSingingBowl.jpeg',
+                         width: 200, height: 200,
+                      ),
+                      ButtonTheme.bar(
+                        child: ButtonBar(
+                          children: <Widget>[
+                            FlatButton(
+                              child: const Text('PLAY'),
+                              onPressed: () {
+                              },
+                            ),
+                            FlatButton(
+                              child: const Text('CHOOSE'),
+                            onPressed: () {},
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Card(child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const ListTile(
+                      title: Text('Zen Buddhist Temple Bell')
+                    ),
+                    Image.asset(
+                      'assets/ZenBuddhistBell.jpeg',
+                      width: 200, height: 200,
+                    ),
+                    ButtonTheme.bar(
+                        child: ButtonBar(
+                          children: <Widget>[
+                            FlatButton(
+                              child: const Text('PLAY'),
+                              onPressed: () {},
+                            ),
+                            FlatButton(
+                              child: const Text('CHOOSE'),
+                            onPressed: () {},
+                            )
+                          ],
+                        ),
+                      )
+                ],),)
+              ],
             ),
           );
         });
@@ -181,7 +216,7 @@ class MeditationTechniquesPage extends MaterialPageRoute<Null> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       const ListTile(
-                        title: Text('Zen Meditation (Zazen)'),
+                        title: Text('Zen Meditation'),
                         subtitle: Text(
                             'A Meditative discipline typically the primary practise of the Zen Buddhist tradition.'),
                       ),
@@ -190,7 +225,9 @@ class MeditationTechniquesPage extends MaterialPageRoute<Null> {
                           children: <Widget>[
                             FlatButton(
                               child: const Text('LEARN MORE'),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, ZenMeditation());
+                              },
                             ),
                           ],
                         ),
@@ -219,6 +256,11 @@ class MindfulnessMeditation extends MaterialPageRoute<Null> {
         padding: const EdgeInsets.all(15.0),
         child: ListView(
           children: <Widget>[
+            Image.asset(
+                    'assets/DharmaWheel.png',
+                    width: 200,
+                    height: 200,
+                    ),
             Text('Mindfulness meditation and Vipassana meditation are very similar and it takes a lot of inspiration from the Buddhist practise. Mindfulness meditation is a secular and therapeutic practise that is less connected with the teachings of Buddhism. In Vipassana, meditators operate within the framework of Buddhism while in Mindfulness meditation, practitioners do not need to operate in such a framework. It is one of the most popular forms of meditation and it is highly recommended to develop this practise if you are just starting out on meditation.'),
             Text('                                                                                                           Steps:', style: TextStyle(fontWeight: FontWeight.bold), ),
             Text('1. Sit comfortably, with your spine erect, either in a chair or cross-legged on a cushion.'),
@@ -249,7 +291,11 @@ class VipassanaMeditation extends MaterialPageRoute<Null> {
               padding: const EdgeInsets.all(15.0),
               child: ListView(
                 children: <Widget>[
-                  Image.asset('assets/DharmaWheel.png'),
+                  Image.asset(
+                    'assets/DharmaWheel.png',
+                    width: 200,
+                    height: 200,
+                    ),
                   Text("Vipassana is the oldest of Buddhist meditation practices. The method comes directly from the Satipatthana Sutta [Foundations of Mindfulness], a discourse attributed to the Buddha himself. Vipassana means to see things as they really are or insight into the nature of existence; it is one of the most popular forms of meditation techniques as result of a growth in prominence in 20th century most notably by S.N Goenka and Joseph Goldstein. If you're just starting out on the practise of meditation, this is the go-to practise. "),
                   Text('                                                                                                           Steps:', style: TextStyle(fontWeight: FontWeight.bold),),
                   Text('1. Sit down either on a chair or on a cushion. Make sure that the back is straight and erect yet relaxed. If on a cushion, sit in a cross legged posture.'),
@@ -258,6 +304,38 @@ class VipassanaMeditation extends MaterialPageRoute<Null> {
                   Text('4. Begin to notice the rising and falling sensation of the abdomen. One can alternatively focus on the inhalation and exhalation of the nostrils.'),
                   Text('5. Distractions might appear in the form of other bodily sensations, perceptual sensations that arise from the five senses, and thoughts appearing in your mind. Notice these distractions for a while and then return back to the focus of the breath. '),
                   Text('6. By developing this technique one begins to developing a secondary awareness to these distractions ; allowing these thoughts, emotions, perceptual sensations to come and go as they please  without being carried way from the primary awareness that is anapanasati in the awareness of the breath.'),
+                ],
+              ),
+            ),
+          );
+        });
+}
+
+class ZenMeditation extends MaterialPageRoute<Null> {
+  ZenMeditation()
+      : super(builder: (BuildContext context) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text("Zen Meditation"),
+              backgroundColor: Colors.deepPurple,
+            ),
+            body: Container(
+              padding: const EdgeInsets.all(15.0),
+              child: ListView(
+                children: <Widget>[
+                  Image.asset(
+                    'assets/DharmaWheel.png',
+                    width: 200,
+                    height: 200,
+                    ),
+                  Text('Zen Buddhism is a school of Mahayana Buddhism that originated in China and it then spread to Korea, Vietnam, and Japan. Zen Meditation is quite different from Vipassana and Mindfulness Meditation, however, it does emphasise the mindfulness of breathing. There are two primary types of Zen Meditation that are Zazen and Shikantaza. In Shikantaza also called Just Sitting there is no object of meditation for the mind to pay attention to. One just sits and let thoughts flow.'),
+                  Text('                                                                                                           Steps:', style: TextStyle(fontWeight: FontWeight.bold),),
+                  Text('1. Sit comfortably, with your spine erect, either in a chair or cross-legged on a cushion.'),
+                  Text('2. Slowly close your eyes.'),
+                  Text('3. Become aware that you are sitting, be aware of the sensations that arise when you are sitting.'),
+                  Text('4. Let thoughts, observations, and sensations flow through your mind and your awareness.'),
+                  Text('5. In a sense this is non-meditation; there is no goal. The objective is to just sit and have a calm awareness for whatever comes into your conscious experience.'),
+                  Text('6. This practise can be standalone or it can be combined with Vipassana and Mindfulness Meditation.'),
                 ],
               ),
             ),

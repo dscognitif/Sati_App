@@ -37,6 +37,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
+  // Building the widgets for the App Bar and the Tab Bar with 3 Tabs
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -46,9 +47,18 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
         bottom: new TabBar(
           controller: controller,
           tabs: <Tab>[
-            new Tab(icon: new Icon(Icons.timer)),
-            new Tab(icon: new Icon(Icons.timelapse)),
-            new Tab(icon: new Icon(Icons.settings)),
+            new Tab(
+              icon: new Icon(Icons.timer),
+              child: Text('Timer'),
+            ),
+            new Tab(
+              icon: new Icon(Icons.timelapse),
+              child: Text('Progress'),
+              ),
+            new Tab(
+              icon: new Icon(Icons.settings),
+              child: Text('Settings')
+              ),
           ]
         )
       ),
